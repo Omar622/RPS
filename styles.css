@@ -1,0 +1,21 @@
+.btn-wrapper {
+  margin: 10px auto;
+  width: 700px;
+  display: flex;
+  gap: 18px;
+}
+
+.content {
+  text-align: center;
+}
+
+.btn {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(245, 245, 245);
+  border: none;
+}
+
+.btn img {
+  width: 150px;
+}

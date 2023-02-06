@@ -19,25 +19,37 @@ let playRound = (playerSelection, computerSelection) => {
   }
 }
 
-let game = () => {
-  let numberOfRounds = 5
-  let playerScore = 0, computerScore = 0
-  while (numberOfRounds--) {
-    let playerSelection = prompt('Enter you choice..')
-    let computerSelection = getComputerChoice()
-    let result = playRound(playerSelection, computerSelection)
-    if (result.includes('Win')) ++playerScore
-    else if (result.includes('Lose')) ++computerScore
-    console.log(result)
-  }
-  if (playerScore === computerScore) {
-    return `Draw! both have ${playerScore} points`
-  } else if (playerScore > computerScore) {
-    return `You Win! Player has ${playerScore} points and Computer has ${computerScore} points`
-  } else {
-    return `You Lose! Computer has ${computerScore} points and Player has ${playerScore} points`
-  }
+// let game = () => {
+//   let numberOfRounds = 5
+//   let playerScore = 0, computerScore = 0
+//   while (numberOfRounds--) {
+//     let playerSelection = prompt('Enter you choice..')
+//     let computerSelection = getComputerChoice()
+//     let result = playRound(playerSelection, computerSelection)
+//     if (result.includes('Win')) ++playerScore
+//     else if (result.includes('Lose')) ++computerScore
+//     console.log(result)
+//   }
+//   if (playerScore === computerScore) {
+//     return `Draw! both have ${playerScore} points`
+//   } else if (playerScore > computerScore) {
+//     return `You Win! Player has ${playerScore} points and Computer has ${computerScore} points`
+//   } else {
+//     return `You Lose! Computer has ${computerScore} points and Player has ${playerScore} points`
+//   }
+// }
+
+// console.log(game())
+
+function playVsComputer(playerSelection) {
+  let computerSelection = getComputerChoice();
+  console.log(playRound(playerSelection, computerSelection));
 }
 
+const rockBtn = document.querySelector('.btn.rock');
+const paperBtn = document.querySelector('.btn.paper');
+const scissorsBtn = document.querySelector('.btn.scissors');
 
-console.log(game())
+rockBtn.addEventListener('click', () => playVsComputer('rock'))
+paperBtn.addEventListener('click', () => playVsComputer('paper'))
+scissorsBtn.addEventListener('click', () => playVsComputer('scissors'))
